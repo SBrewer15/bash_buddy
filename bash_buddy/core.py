@@ -30,10 +30,10 @@ def fmt_query(query):
     </user_query>'''
     return query
 
-# %% ../nbs/00_core.ipynb 22
+# %% ../nbs/00_core.ipynb 27
 @call_parse
 def main(query:str): #Question to ask the assistant
-    'Bash Buddy Assistant for you Terminal'
-    c =Chat(mdl)
+    'A.I. Assistant for you Terminal'
+    c =Chat(mdl, tools=[view, rg])
     res = c(fmt_query(query))
     print(res.choices[0].message.content)
